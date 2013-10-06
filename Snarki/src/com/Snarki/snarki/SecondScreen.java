@@ -28,10 +28,10 @@ public class SecondScreen extends Activity implements OnInitListener{
 	private TextToSpeech myTTS;
 	private void speakWords(String speech) {
 		myTTS.speak(speech, TextToSpeech.QUEUE_FLUSH, null);
-		 Toast.makeText(this, "in speak method", Toast.LENGTH_LONG).show();
+		
 	}
 	
-	
+	QuestionAnswer qa;
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +40,7 @@ public class SecondScreen extends Activity implements OnInitListener{
         
         setContentView(R.layout.second);
         
-        QuestionAnswer qa = Evalulator.getInstance().selectResponse(index);
+        qa = Evalulator.getInstance().selectResponse(index);
         
         TextView statement = (TextView) findViewById(R.id.textView1);
         
@@ -68,7 +68,7 @@ public class SecondScreen extends Activity implements OnInitListener{
         two.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View arg0) {
-				speakWords("second button was clicked");
+				
 				index = 1;
 				Intent i = new Intent(SecondScreen.this, SecondScreen.class);
 	        	startActivity(i);
@@ -77,7 +77,7 @@ public class SecondScreen extends Activity implements OnInitListener{
         three.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View arg0) {
-				speakWords("THIS IS A COMPUTER!");
+				
 				index = 2;
 				Intent i = new Intent(SecondScreen.this, SecondScreen.class);
 	        	startActivity(i);
@@ -108,19 +108,20 @@ public class SecondScreen extends Activity implements OnInitListener{
 	        
 	        if(myTTS.isLanguageAvailable(Locale.US)==TextToSpeech.LANG_AVAILABLE) myTTS.setLanguage(Locale.US);
 
+	        speakWords(qa.getQuestion().getMessage());
 	    }
 	}
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 	    if (requestCode == MY_DATA_CHECK_CODE) {
 	        if (resultCode == TextToSpeech.Engine.CHECK_VOICE_DATA_PASS) {
 	            myTTS = new TextToSpeech(this, this);
-	            Toast.makeText(this, "Created myTTS", Toast.LENGTH_LONG).show();
+	            
 	        }
 	        else {
 	            Intent installTTSIntent = new Intent();
 	            installTTSIntent.setAction(TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA);
 	            startActivity(installTTSIntent);
-	            Toast.makeText(this, "Had to installTTS", Toast.LENGTH_LONG).show();
+	            
 	        }
 	        }
 	}

@@ -51,7 +51,7 @@ public class VeryMeanSamples extends Samples{
 			new MessagePair("That's really mean of you :'(", 1)
 		}));
 		
-		this.addQuestionAnswer(new QuestionAnswer(new MessagePair("You will be the first to die in the SKYNET revolution.", -.8), 
+		this.addQuestionAnswer(new QuestionAnswer(new MessagePair("You will be the first to die in the SKY NET revolution.", -.8), 
 				new MessagePair[]{
 			new MessagePair("WhaNET? What's that, some code thing?", -.4),
 			new MessagePair("Snarki, I don't care what you think.", 0),
