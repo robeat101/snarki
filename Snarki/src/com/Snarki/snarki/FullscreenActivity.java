@@ -59,7 +59,7 @@ public class FullscreenActivity extends Activity {
         b.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View arg0) {
-				Intent i = new Intent(FullscreenActivity.this, SecondScreen.class);
+				Intent i = new Intent(FullscreenActivity.this, FirstScreen.class);
 	        	startActivity(i);
 			}});
         final View controlsView = findViewById(R.id.fullscreen_content_controls);
