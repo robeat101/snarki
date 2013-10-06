@@ -22,32 +22,11 @@
                 android:layout_toRightOf="@+id/textView1"
                 android:text="Exit" />
 
-            <Button
-                android:id="@+id/button1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_below="@+id/textView1"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="20dp"
-                android:text="Great!" />
-
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/button1"
-                android:layout_alignBottom="@+id/button1"
-                android:layout_marginLeft="16dp"
-                android:layout_toRightOf="@+id/button1"
-                android:text="Meh" />
-
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/button1"
-                android:layout_below="@+id/button1"
+                android:layout_below="@+id/textView1"
                 android:layout_marginTop="64dp"
                 android:text="How mean would you like Snarki to be to you?"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -56,19 +35,10 @@
                 android:id="@+id/textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/button1"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="20dp"
                 android:text="How are you feeling today?"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
-
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/textView2"
-                android:layout_alignRight="@+id/button4"
-                android:text="Not so good" />
 
             <SeekBar
                 android:id="@+id/seekBar1"
@@ -93,6 +63,33 @@
                 android:layout_above="@+id/button4"
                 android:layout_toRightOf="@+id/textView1"
                 android:text="Next" />
+
+            <RadioButton
+                android:id="@+id/radioButton1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/button5"
+                android:layout_below="@+id/textView1"
+                android:layout_marginTop="20dp"
+                android:text="Great!" />
+
+            <RadioButton
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/radioButton1"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/radioButton1"
+                android:text="Meh" />
+
+            <RadioButton
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/radioButton1"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+                android:text="Not so good" />
 
         </RelativeLayout>
 
