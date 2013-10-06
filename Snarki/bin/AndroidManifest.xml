@@ -27,7 +27,7 @@
 
         <activity
             android:name="com.Snarki.snarki.SecondScreen"
-            android:label="Great scott!" >
+            android:label="Great Scott!" >
         </activity>
     </application>
 
