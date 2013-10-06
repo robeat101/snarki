@@ -60,7 +60,6 @@ public class SecondScreen extends Activity implements OnInitListener{
         one.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View arg0) {
-				speakWords("one button was clicked");
 				index = 0;
 				Intent i = new Intent(SecondScreen.this, SecondScreen.class);
 	        	startActivity(i);
@@ -68,7 +67,6 @@ public class SecondScreen extends Activity implements OnInitListener{
         two.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View arg0) {
-				
 				index = 1;
 				Intent i = new Intent(SecondScreen.this, SecondScreen.class);
 	        	startActivity(i);
@@ -77,7 +75,6 @@ public class SecondScreen extends Activity implements OnInitListener{
         three.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View arg0) {
-				
 				index = 2;
 				Intent i = new Intent(SecondScreen.this, SecondScreen.class);
 	        	startActivity(i);
@@ -106,7 +103,12 @@ public class SecondScreen extends Activity implements OnInitListener{
 	public void onInit(int initStatus) {
 		if (initStatus == TextToSpeech.SUCCESS) {
 	        
-	        if(myTTS.isLanguageAvailable(Locale.US)==TextToSpeech.LANG_AVAILABLE) myTTS.setLanguage(Locale.US);
+	        if(myTTS.isLanguageAvailable(Locale.US)==TextToSpeech.LANG_AVAILABLE) {
+	        		myTTS.setLanguage(Locale.US);
+	        		
+	        
+	        }
+	        speakWords(qa.getQuestion().getMessage());
 
 	        speakWords(qa.getQuestion().getMessage());
 	    }
@@ -115,13 +117,10 @@ public class SecondScreen extends Activity implements OnInitListener{
 	    if (requestCode == MY_DATA_CHECK_CODE) {
 	        if (resultCode == TextToSpeech.Engine.CHECK_VOICE_DATA_PASS) {
 	            myTTS = new TextToSpeech(this, this);
-	            
-	        }
-	        else {
+	        }else {
 	            Intent installTTSIntent = new Intent();
 	            installTTSIntent.setAction(TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA);
 	            startActivity(installTTSIntent);
-	            
 	        }
 	        }
 	}
