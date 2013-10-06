@@ -59,23 +59,15 @@ public class FullscreenActivity extends Activity {
         b.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View arg0) {
-				TextView t = (TextView)findViewById(R.id.textView1);
-				t.setText("BUTTON WORKS! SO HAPPY!!!!!!! GET JUNK FOOD");
+				Intent i = new Intent(FullscreenActivity.this, SecondScreen.class);
+	        	startActivity(i);
 			}});
-        
-        Button b2 = (Button) findViewById(R.id.button3); // Here the R.id.button1 is the button form you design
-        b2.setOnClickListener(new View.OnClickListener(){
-        public void onClick(View arg0) {
-        	Intent i = new Intent(FullscreenActivity.this, SecondScreen.class);
-        	startActivity(i);
-        }});
-        
         final View controlsView = findViewById(R.id.fullscreen_content_controls);
         final View contentView = findViewById(R.id.fullscreen_content);
 
         // Set up an instance of SystemUiHider to control the system UI for
         // this activity.
-        mSystemUiHider = SystemUiHider.getInstance(this, contentView, HIDER_FLAGS);
+       mSystemUiHider = SystemUiHider.getInstance(this, contentView, HIDER_FLAGS);
         mSystemUiHider.setup();
         mSystemUiHider
                 .setOnVisibilityChangeListener(new SystemUiHider.OnVisibilityChangeListener() {

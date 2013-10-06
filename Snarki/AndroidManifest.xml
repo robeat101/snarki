@@ -24,10 +24,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <activity
+            android:name="com.Snarki.snarki.FirstScreen"
+            android:label="Snarki" >
+        </activity>
 
         <activity
             android:name="com.Snarki.snarki.SecondScreen"
-            android:label="Great Scott!" >
+            android:label="Snarki" >
         </activity>
     </application>
 
