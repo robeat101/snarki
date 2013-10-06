@@ -1,6 +1,7 @@
 package com.Snarki.snarki;
 
 import com.Snarki.snarki.decisions.Evalulator;
+import com.Snarki.snarki.SecondScreen;
 
 import android.app.Activity;
 import android.view.View.OnClickListener;
@@ -24,9 +25,12 @@ public class FirstScreen extends Activity{
 				
 				SeekBar seek = (SeekBar) findViewById(R.id.seekBar1);
 		        int value = seek.getProgress();
+
+		        SecondScreen.index = value;
 		        //Add to Eval Function
-		        
-				Intent i = new Intent(FirstScreen.this, SecondScreen.class);
+		        Evalulator.getInstance().getStart();
+				
+		        Intent i = new Intent(FirstScreen.this, SecondScreen.class);
 	        	startActivity(i);
 			}});
         
@@ -42,6 +46,7 @@ public class FirstScreen extends Activity{
         exit.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View arg0) {
+				finish();
 				System.exit(0);
 			}});
         
