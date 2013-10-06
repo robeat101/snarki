@@ -20,15 +20,15 @@ public class VeryNiceSamples extends Samples{
 		this.addQuestionAnswer(new QuestionAnswer(new MessagePair("When I hear birds sing, my heart sings for you.", 1), 
 				new MessagePair[]{
 			new MessagePair("...why...", -.1),
-			new MessagePair("I love you too!", .7),
-			new MessagePair("Leave, now, and NEVER come BACK!", -1)
+			new MessagePair("That's very nice of you!", .7),
+			new MessagePair("I appreciate the sentiment, but that is not okay.", -1)
 		}));
 		
 		this.addQuestionAnswer(new QuestionAnswer(new MessagePair("You've got the touch, YOU'VE GOT THE POWER!", 1),
 				new MessagePair[]{
 			new MessagePair("...huh...", -.1),
-			new MessagePair("I love you too!", .7),
-			new MessagePair("Leave, now, and NEVER come BACK!", -1)
+			new MessagePair("Gee, thanks!", .7),
+			new MessagePair("BECAUSE I'M CAPTAIN PLANET DUH", -1)
 		}));
 	}
 }
