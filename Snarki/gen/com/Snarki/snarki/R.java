@@ -30,6 +30,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int button3=0x7f070006;
         public static final int button4=0x7f070005;
         public static final int button5=0x7f07000a;
+        public static final int button6=0x7f07000b;
         public static final int fullscreen_content=0x7f070000;
         public static final int fullscreen_content_controls=0x7f070001;
         public static final int seekBar1=0x7f070009;
