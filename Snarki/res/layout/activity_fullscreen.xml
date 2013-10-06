@@ -29,7 +29,9 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true" >
+        android:background="#0340"
+        android:fitsSystemWindows="true"
+        android:foreground="#0340" >
 
         <LinearLayout
             android:id="@+id/fullscreen_content_controls"
@@ -46,17 +48,8 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <TextView
-                android:id="@+id/textView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignRight="@+id/button1"
-                android:layout_marginTop="137dp"
-                android:text="Snarki"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:layout_height="match_parent"
+            android:background="#0340" >
 
             <Button
                 android:id="@+id/button1"
@@ -66,6 +59,18 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="122dp"
                 android:text="Go!" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/button1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="99dp"
+                android:text="SNARKI"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FFFF"
+                android:textSize="50dp" />
 
         </RelativeLayout>
 

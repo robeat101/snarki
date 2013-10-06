@@ -14,12 +14,14 @@ public class Evalulator {
 	
 	private QuestionAnswer lastQuestionAnswer;
 	private double cpuFeeling, userFeeling, cumalativeFeeling;
+	private Integer[] map;
 	
 	private Evalulator(){
 		this.cpuFeeling = 0;
 		this.userFeeling = 0;
 		this.cumalativeFeeling = 0;
 		this.lastQuestionAnswer = getStart();
+		map = new Integer[]{0, 1, 2};
 	}
 	
 	public QuestionAnswer getStart(){
@@ -32,11 +34,28 @@ public class Evalulator {
 	
 	public QuestionAnswer selectResponse(int index){
 	
+		index = map[index];
+		
 		if (index > 2) index = 2; else if (index < 0) index = 0; 
 		
 		this.cpuFeeling = this.lastQuestionAnswer.getResponses()[index].getFeeling();
 		
 		QuestionAnswer qa = this.evalulate(this.cpuFeeling, this.userFeeling, this.cumalativeFeeling);
+		map[0] = 0;
+		map[1] = 1;
+		map[2] = 2;
+		for (int i = 0 ; i < 10 ; i ++){
+			int f = (int)Math.floor(Math.random()*2);
+			int s = (int)Math.floor(Math.random()*2);
+			MessagePair tmp = qa.getResponses()[f];
+			int tmpInt = map[f];
+			qa.getResponses()[f] = qa.getResponses()[s];
+			qa.getResponses()[s] = tmp;
+			map[f] = map[s];
+			map[s] = tmpInt;
+		}
+		
+		
 		this.lastQuestionAnswer = qa;
 		return qa;
 	}

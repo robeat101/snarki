@@ -75,13 +75,7 @@ public class SecondScreen extends Activity{
 	        	startActivity(i);
 			}});
         
-        Button exit = (Button) findViewById(R.id.button4);
-        exit.setOnClickListener(new OnClickListener(){
-			@Override
-			public void onClick(View arg0) {
-				finish();
-				System.exit(0);
-			}});
+
         
         
 	}
