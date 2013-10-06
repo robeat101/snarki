@@ -24,11 +24,19 @@ public class FirstScreen extends Activity{
 			public void onClick(View arg0) {
 				
 				SeekBar seek = (SeekBar) findViewById(R.id.seekBar1);
-		        int value = seek.getProgress();
-
-		        SecondScreen.index = value;
+		        double value = seek.getProgress();
+		        value /= seek.getMax();
+		        value-=.5;
+		        value*=2;
+		        
+		        //SecondScreen.index = value;
+		        //IF GOOD IS TICKED SecondScreen.index = 0
+		        //IF OKAY IS TICKED SecondScreen.index = 1
+		        //IF BAD IS TICKED SecondScreen.index = 2
+		        
 		        //Add to Eval Function
 		        Evalulator.getInstance().getStart();
+				Evalulator.getInstance().setCpuFeeling(value);
 				
 		        Intent i = new Intent(FirstScreen.this, SecondScreen.class);
 	        	startActivity(i);

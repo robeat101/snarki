@@ -26,7 +26,13 @@ public class Evalulator {
 		return QuestionAnswerLib.startQuestion;
 	}
 	
+	public void setCpuFeeling(double cpu){
+		this.cpuFeeling = cpu;
+	}
+	
 	public QuestionAnswer selectResponse(int index){
+	
+		if (index > 2) index = 2; else if (index < 0) index = 0; 
 		
 		this.cpuFeeling = this.lastQuestionAnswer.getResponses()[index].getFeeling();
 		
