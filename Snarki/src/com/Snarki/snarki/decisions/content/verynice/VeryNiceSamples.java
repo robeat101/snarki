@@ -30,5 +30,13 @@ public class VeryNiceSamples extends Samples{
 			new MessagePair("Gee, thanks!", .7),
 			new MessagePair("BECAUSE I'M CAPTAIN PLANET DUH", -1)
 		}));
+		
+		this.addQuestionAnswer(new QuestionAnswer(new MessagePair("What do you get when you cross an elephant, and a rhino?", 1),
+				new MessagePair[]{
+			new MessagePair("...huh...", -.1),
+			new MessagePair("Hell if I know.", .7),
+			new MessagePair("DONT SPEW YOUR RIDDLES HERE!", -1)
+		}));
+		
 	}
 }

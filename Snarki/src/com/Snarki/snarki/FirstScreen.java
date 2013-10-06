@@ -26,9 +26,11 @@ public class FirstScreen extends Activity{
 				
 				SeekBar seek = (SeekBar) findViewById(R.id.seekBar1);
 		        double value = seek.getProgress();
-		        value /= seek.getMax();
-		        value-=.5;
-		        value*=2;
+		        if (value !=0){
+			        value /= seek.getMax();
+			        value-=.5;
+			        value*=2;
+		        } else value = .1;
 		        
 		        //SecondScreen.index = value;
 		        //IF GOOD IS TICKED SecondScreen.index = 0
@@ -39,11 +41,11 @@ public class FirstScreen extends Activity{
 		        RadioButton r2 = (RadioButton) findViewById(R.id.button2);
 		        RadioButton r3 = (RadioButton) findViewById(R.id.button3);
 		        if (r1.isChecked()){
-		        	SecondScreen.index = -1;
-		        }else if (r2.isChecked()){
 		        	SecondScreen.index = 0;
-		        } else if (r3.isChecked()){
+		        }else if (r2.isChecked()){
 		        	SecondScreen.index = 1;
+		        } else if (r3.isChecked()){
+		        	SecondScreen.index = 2;
 		        }
 		        
 		        //Add to Eval Function

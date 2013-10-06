@@ -11,8 +11,8 @@ public class SomeMeanSamples extends Samples{
 		
 		this.addQuestionAnswer(new QuestionAnswer(new MessagePair("You probably google yourself every day.", -.5), 
 				new MessagePair[]{
-			new MessagePair("I know, and I like it", -.2),
-			new MessagePair("Whatever, sparky.", 0),
+			new MessagePair("Whats it to you?", -.2),
+			new MessagePair("I am worth it.", -.6),
 			new MessagePair("Stoooop making fun of me!", 1)
 		}));
 		
@@ -20,7 +20,7 @@ public class SomeMeanSamples extends Samples{
 				new MessagePair[]{
 			new MessagePair("I know, and I like it", -.2),
 			new MessagePair("Whatever, sparky.", 0),
-			new MessagePair("Stoooop making fun of me!", 1)
+			new MessagePair("I am offended by spectecals!", 1)
 		}));
 		
 		this.addQuestionAnswer(new QuestionAnswer(new MessagePair("Please turn me off, I don't want to talk to you.", -.5), 
@@ -33,8 +33,8 @@ public class SomeMeanSamples extends Samples{
 		this.addQuestionAnswer(new QuestionAnswer(new MessagePair("I was in a good mood until you showed up.", -.5), 
 				new MessagePair[]{
 			new MessagePair("You don't have feelings", -.2),
-			new MessagePair("Whatever, sparky.", 0),
-			new MessagePair("Stoooop making fun of me!", 1)
+			new MessagePair("So was I.", -.4),
+			new MessagePair("Stop making fun of me!", 1)
 		}));
 		
 		this.addQuestionAnswer(new QuestionAnswer(new MessagePair("Do you try to be such a bumbleflump, or does it come naturally?", -.5), 

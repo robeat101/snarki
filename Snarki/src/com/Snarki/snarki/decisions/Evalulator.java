@@ -63,7 +63,12 @@ public class Evalulator {
 	public QuestionAnswer evalulate(double cpuFeeling, double userFeeling, double cumalativeFeeling){
 		System.out.println("CPU : " + cpuFeeling + ", USR : " + userFeeling);
 		double d = (cpuFeeling - userFeeling) + cumalativeFeeling;
-		System.out.println("D : " + d);
+		//System.out.println("D : " + d);
+		
+		if (d < -1) d = -1;
+		if (d > 1) d = 1;
+		this.cumalativeFeeling = d;
+		
 		if (isBetween(d, -1, -.5)) return this.getQuestionAnswerFromArray(QuestionAnswerLib.VERY_MEAN);
 		else if (isBetween(d, -.5, 0)) return this.getQuestionAnswerFromArray(QuestionAnswerLib.SOME_MEAN);
 		else if (isBetween(d, 0, .5)) return this.getQuestionAnswerFromArray(QuestionAnswerLib.SOME_NICE);

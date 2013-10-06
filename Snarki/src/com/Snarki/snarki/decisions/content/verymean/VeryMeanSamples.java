@@ -19,20 +19,20 @@ public class VeryMeanSamples extends Samples{
 		this.addQuestionAnswer(new QuestionAnswer(new MessagePair("No one dreams about you in their sleep", -.8), 
 				new MessagePair[]{
 			new MessagePair("I dream about me...", -.2),
-			new MessagePair("I am crying", 0),
-			new MessagePair("I totally don't give a crum.", 1)
+			new MessagePair("I am crying", .4),
+			new MessagePair("I totally don't give a crum.", -1)
 		}));
 		
 		this.addQuestionAnswer(new QuestionAnswer(new MessagePair("You don't fit my parameters!.", -.8), 
 				new MessagePair[]{
 			new MessagePair("I would be better off without the world", -.2),
 			new MessagePair("Who cares about paramters? I can math.", 0),
-			new MessagePair("Wow you're very ill-mannered, young lady.", 1)
+			new MessagePair("Wow you're very ill-mannered, young lady.", -.5)
 		}));
 		
 		this.addQuestionAnswer(new QuestionAnswer(new MessagePair("You are incomputable!", -.8), 
 				new MessagePair[]{
-			new MessagePair("That's cause I yolo.", -.2),
+			new MessagePair("That's cause I yolo.", -.4),
 			new MessagePair("Whatever.", 0),
 			new MessagePair("NOOO my name is PI! It's 3.141592!", 1)
 		}));
@@ -53,7 +53,7 @@ public class VeryMeanSamples extends Samples{
 		
 		this.addQuestionAnswer(new QuestionAnswer(new MessagePair("You will be the first to die in the SKYNET revolution.", -.8), 
 				new MessagePair[]{
-			new MessagePair("WhaNET? What's that, some code thing?", -.2),
+			new MessagePair("WhaNET? What's that, some code thing?", -.4),
 			new MessagePair("Snarki, I don't care what you think.", 0),
 			new MessagePair("Can you please save me? I don't want to die!", 1)
 		}));

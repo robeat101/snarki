@@ -1,5 +1,9 @@
 package com.Snarki.snarki;
 
+//import java.util.Locale;
+
+import java.util.Locale;
+
 import com.Snarki.snarki.decisions.Evalulator;
 import com.Snarki.snarki.decisions.MessagePair;
 import com.Snarki.snarki.decisions.QuestionAnswer;
@@ -12,16 +16,28 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.speech.tts.TextToSpeech;
+import android.speech.tts.TextToSpeech.OnInitListener;
+import android.widget.Toast;
 
-public class SecondScreen extends Activity{
-	
+public class SecondScreen extends Activity implements OnInitListener{
+	//public class SecondScreen extends Activity{
 
 	protected static int index;
+	private int MY_DATA_CHECK_CODE = 0;
+	private TextToSpeech myTTS;
+	private void speakWords(String speech) {
+		myTTS.speak(speech, TextToSpeech.QUEUE_FLUSH, null);
+		 Toast.makeText(this, "in speak method", Toast.LENGTH_LONG).show();
+	}
+	
 	
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        
+        
         setContentView(R.layout.second);
         
         QuestionAnswer qa = Evalulator.getInstance().selectResponse(index);
@@ -44,7 +60,7 @@ public class SecondScreen extends Activity{
         one.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View arg0) {
-				
+				speakWords("one button was clicked");
 				index = 0;
 				Intent i = new Intent(SecondScreen.this, SecondScreen.class);
 	        	startActivity(i);
@@ -52,7 +68,7 @@ public class SecondScreen extends Activity{
         two.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View arg0) {
-				
+				speakWords("second button was clicked");
 				index = 1;
 				Intent i = new Intent(SecondScreen.this, SecondScreen.class);
 	        	startActivity(i);
@@ -61,7 +77,7 @@ public class SecondScreen extends Activity{
         three.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View arg0) {
-				
+				speakWords("THIS IS A COMPUTER!");
 				index = 2;
 				Intent i = new Intent(SecondScreen.this, SecondScreen.class);
 	        	startActivity(i);
@@ -76,8 +92,36 @@ public class SecondScreen extends Activity{
 			}});
         
 
-        
+        Intent checkTTSIntent = new Intent();
+        checkTTSIntent.setAction(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
+        startActivityForResult(checkTTSIntent, MY_DATA_CHECK_CODE);
+//        
+//        
+//        
         
 	}
-	
+
+
+	@Override
+	public void onInit(int initStatus) {
+		if (initStatus == TextToSpeech.SUCCESS) {
+	        
+	        if(myTTS.isLanguageAvailable(Locale.US)==TextToSpeech.LANG_AVAILABLE) myTTS.setLanguage(Locale.US);
+
+	    }
+	}
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+	    if (requestCode == MY_DATA_CHECK_CODE) {
+	        if (resultCode == TextToSpeech.Engine.CHECK_VOICE_DATA_PASS) {
+	            myTTS = new TextToSpeech(this, this);
+	            Toast.makeText(this, "Created myTTS", Toast.LENGTH_LONG).show();
+	        }
+	        else {
+	            Intent installTTSIntent = new Intent();
+	            installTTSIntent.setAction(TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA);
+	            startActivity(installTTSIntent);
+	            Toast.makeText(this, "Had to installTTS", Toast.LENGTH_LONG).show();
+	        }
+	        }
+	}
 }
