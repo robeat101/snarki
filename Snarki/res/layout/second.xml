@@ -22,6 +22,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginBottom="19dp"
                 android:layout_marginRight="17dp"
+                android:textColor="#FFFF"
                 android:text="Exit" />
 
             <TextView
@@ -32,6 +33,7 @@
                 android:layout_below="@+id/textView1"
                 android:layout_marginTop="38dp"
                 android:text="Response:"
+                android:textColor="#FFFF"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <TextView
@@ -43,6 +45,7 @@
                 android:layout_marginLeft="42dp"
                 android:layout_marginTop="28dp"
                 android:text="Statement"
+                android:textColor="#FFFF"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <Button
@@ -52,6 +55,7 @@
                 android:layout_alignBaseline="@+id/button4"
                 android:layout_alignBottom="@+id/button4"
                 android:layout_alignLeft="@+id/textView1"
+                android:textColor="#FFFF"
                 android:text="Restart" />
 
             <Button
@@ -61,6 +65,7 @@
                 android:layout_above="@+id/button3"
                 android:layout_marginBottom="23dp"
                 android:layout_toRightOf="@+id/textView2"
+                android:textColor="#FFFF"
                 android:text="Button" />
 
             <Button
@@ -70,6 +75,7 @@
                 android:layout_above="@+id/button2"
                 android:layout_marginBottom="30dp"
                 android:layout_toRightOf="@+id/textView2"
+                android:textColor="#FFFF"
                 android:text="Button" />
 
             <Button
@@ -79,6 +85,7 @@
                 android:layout_above="@+id/button5"
                 android:layout_alignLeft="@+id/button3"
                 android:layout_marginBottom="45dp"
+                android:textColor="#FFFF"
                 android:text="Button" />
 
         </RelativeLayout>

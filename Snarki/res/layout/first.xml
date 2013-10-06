@@ -20,6 +20,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_toRightOf="@+id/textView1"
+                android:textColor="#FFFF"
                 android:text="Exit" />
 
             <TextView
@@ -28,6 +29,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/textView1"
                 android:layout_marginTop="64dp"
+                android:textColor="#FFFF"
                 android:text="How mean would you like Snarki to be to you?"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -37,6 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="20dp"
+                android:textColor="#FFFF"
                 android:text="How are you feeling today?"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -46,6 +49,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_below="@+id/textView2"
+                
                 android:layout_marginTop="58dp" />
 
             <Button
@@ -54,6 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/textView2"
                 android:layout_alignParentBottom="true"
+                android:textColor="#FFFF"
                 android:text="Restart" />
 
             <Button
@@ -61,6 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/button4"
+                android:textColor="#FFFF"
                 android:layout_toRightOf="@+id/textView1"
                 android:text="Next" />
 
@@ -71,6 +77,7 @@
                 android:layout_alignRight="@+id/button5"
                 android:layout_below="@+id/textView1"
                 android:layout_marginTop="20dp"
+                android:textColor="#FFFF"
                 android:text="Great!" />
 
             <RadioButton
@@ -80,6 +87,7 @@
                 android:layout_alignBaseline="@+id/radioButton1"
                 android:layout_marginLeft="20dp"
                 android:layout_toRightOf="@+id/radioButton1"
+                android:textColor="#FFFF"
                 android:text="Meh" />
 
             <RadioButton
@@ -89,6 +97,7 @@
                 android:layout_alignBaseline="@+id/radioButton1"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="15dp"
+                android:textColor="#FFFF"
                 android:text="Not so good" />
 
         </RelativeLayout>
